@@ -28,10 +28,13 @@ gltfLoader.setDRACOLoader(dracoLoader)
 let mixer = null
 
 gltfLoader.load(
-    '/models/hamburger.glb',
+    '/models/burger.glb',
     (gltf) =>
     {
-        scene.add(gltf.scene)
+        let burger = gltf.scene
+        scene.add(burger)
+
+        burger.position.set(0, 4, 0)
     }
 )
 
@@ -39,7 +42,7 @@ gltfLoader.load(
  * Floor
  */
 const floor = new THREE.Mesh(
-    new THREE.PlaneGeometry(50, 50),
+    new THREE.PlaneGeometry(70, 70),
     new THREE.MeshStandardMaterial({
         color: '#444444',
         metalness: 0,
